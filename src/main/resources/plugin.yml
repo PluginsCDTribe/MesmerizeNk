@@ -1,0 +1,17 @@
+name: Mesmerize
+version: ${project.version}
+main: it.alian.gun.mesmerize.Mesmerize
+author: Italiangun
+website: http://ci.pcd.ac.cn/job/Mesmerize/
+api: [1.0.5]
+permissions:
+  mesmerize.showstats:
+    default: true
+  mesmerize.evaluate:
+    default: true
+  mesmerize.config:
+    default: op
+  mesmerize.sell:
+    default: true
+  mesmerize.lore:
+    default: op

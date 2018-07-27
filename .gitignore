@@ -1,0 +1,5 @@
+target/
+.idea/inspectionProfiles/
+.idea/workspace.xml
+src/test/
+.idea/dictionaries
