@@ -6,7 +6,7 @@
 
     <groupId>it.alian.gun</groupId>
     <artifactId>MesNk</artifactId>
-    <version>18.1.1</version>
+    <version>18.1.2</version>
     <packaging>jar</packaging>
 
     <name>MesNk</name>

@@ -8,6 +8,7 @@ import cn.nukkit.item.Item;
 import com.google.common.collect.Lists;
 import it.alian.gun.mesmerize.lore.LoreInfo;
 import it.alian.gun.mesmerize.lore.LoreParser;
+import it.alian.gun.mesmerize.util.ChatColor;
 import org.yaml.snakeyaml.Yaml;
 
 import java.lang.reflect.Field;
@@ -175,7 +176,7 @@ public class MCommand extends VanillaCommand {
                         for (int i = 2; i < args.length; i++) {
                             joiner.add(args[i]);
                         }
-                        lore.add(joiner.toString());
+                        lore.add(ChatColor.translateAlternateColorCodes('&', joiner.toString()));
                         item.setLore(lore.toArray(new String[0]));
                         player.getInventory().setItemInHand(item);
                         return true;
@@ -208,7 +209,7 @@ public class MCommand extends VanillaCommand {
                                 for (int i = 0; i < index - lore.size(); i++) {
                                     lore.add("");
                                 }
-                            lore.set(index + 1, joiner.toString());
+                            lore.set(index + 1, ChatColor.translateAlternateColorCodes('&', joiner.toString()));
                             item.setLore(lore.toArray(new String[0]));
                             player.getInventory().setItemInHand(item);
                             return true;
@@ -226,7 +227,7 @@ public class MCommand extends VanillaCommand {
                             for (int i = 3; i < args.length; i++) {
                                 joiner.add(args[i]);
                             }
-                            lore.add(index, joiner.toString());
+                            lore.add(index, ChatColor.translateAlternateColorCodes('&', joiner.toString()));
                             item.setLore(lore.toArray(new String[0]));
                             player.getInventory().setItemInHand(item);
                             return true;

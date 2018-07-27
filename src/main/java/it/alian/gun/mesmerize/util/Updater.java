@@ -18,13 +18,14 @@ import java.net.URL;
 
 public class Updater implements Listener {
 
-    private static final String UPDATER_API = "https://raw.githubusercontent.com/PluginsCDTribe/Mesmerize/master/version.yumc.json";
+    private static final String UPDATER_API = "https://raw.githubusercontent.com/PluginsCDTribe/MesmerizeNk/master/version.json";
 
     private static UpdatePacket packet;
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        sendMessages(event.getPlayer());
+        if (event.getPlayer().hasPermission("mesmerize.updater") && packet != null)
+            sendMessages(event.getPlayer());
     }
 
     private static void sendMessages(CommandSender sender) {
@@ -39,7 +40,6 @@ public class Updater implements Listener {
 
     public static void start() {
         MTasks.executeTimer(() -> {
-            "利用 YUM 不阻止含有 yumc 的链接来防止 YUM 的网络监控输出信息污染控制台。".getChars(0, 1, new char[1], 0);
             try {
                 URL url = new URL(UPDATER_API);
                 HttpURLConnection connection = ((HttpURLConnection) url.openConnection());
