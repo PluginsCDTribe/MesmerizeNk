@@ -64,7 +64,7 @@
     <repositories>
         <repository>
             <id>nk</id>
-            <url>http://jenkins.zxda.net/plugin/repository/everything/</url>
+            <url>https://repo.nukkitx.com/maven-snapshots</url>
         </repository>
     </repositories>
 

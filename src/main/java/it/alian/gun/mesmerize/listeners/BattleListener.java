@@ -26,7 +26,8 @@ public class BattleListener implements Listener {
     }
 
     private static void performAttack(EntityDamageByEntityEvent event) {
-        if (event.getEntity() instanceof EntityLiving) {
+        if (event.getEntity() != event.getDamager() &&
+            event.getEntity() instanceof EntityLiving) {
             if (event.getEntity().hasMetadata("NPC"))
                 return;
             EntityLiving entity = (EntityLiving) event.getEntity();

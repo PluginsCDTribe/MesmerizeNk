@@ -29,7 +29,7 @@ public class ItemListener implements Listener {
     @EventHandler
     public void onItemChange(PlayerItemHeldEvent event) {
         long nano = System.nanoTime();
-        if (LoreParser.check(event.getPlayer().getInventory().getItem(event.getSlot()), event.getPlayer())) {
+        if (LoreParser.check(event.getItem(), event.getPlayer())) {
             event.setCancelled(true);
         }
         if (MConfig.debug)
